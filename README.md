@@ -17,6 +17,6 @@ So that let's do the next part.
 <b>Download the Android app</b> using this link <link> https://github.com/rmtomal00/Attandence_app.git</link>
 
 Now open it in Android studio.
-Here, will get file call <b>local.properties</b>> Change the ip here also. Rebuild the app from <code> Build -> Rebuild. 
+Here, will get file call <b>local.properties</b> Change the ip here also. Rebuild the app from <code> Build -> Rebuild. 
 
 Let's run the app and enjoy everything using face varification.
