@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "c536cc40-1357-40af-855e-776c336b0c70",
+		"name": "Orbaic my app api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13557566"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"tomal\",\n    \"email\":\"orbaic.tomal@gmail.com\",\n    \"password\": \"12345678\",\n    \"dateOfbirth\": \"2001-12-12\",\n    \"phoneNumber\": \"01738619197\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:30001/api/v1/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30001",
+					"path": [
+						"api",
+						"v1",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:30001/verifyemail?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2tub3dsZWRnZWQiOnRydWUsImluc2VydGVkSWQiOiI2NWNiYjBmOTcyZDk2NGI1MDEyNDUzZTY0IiwiaWF0IjoxNzA3ODQ3OTI5LCJleHAiOjE3MDc5MzQzMjl9.w3u9BZZkRcEqRvaTxZ2ycrVt6grtREII7lDCzWO1p8o",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30001",
+					"path": [
+						"verifyemail"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2tub3dsZWRnZWQiOnRydWUsImluc2VydGVkSWQiOiI2NWNiYjBmOTcyZDk2NGI1MDEyNDUzZTY0IiwiaWF0IjoxNzA3ODQ3OTI5LCJleHAiOjE3MDc5MzQzMjl9.w3u9BZZkRcEqRvaTxZ2ycrVt6grtREII7lDCzWO1p8o"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset-password",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"rmtomal11@gmail.com\",\n    \"password\": 123456\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:30001/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30001",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getuserinfo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJtdG9tYWwxMEBnbWFpbC5jb20iLCJpZCI6IjY1ZGI1OWViZTQxM2M5ZGU4YTE0NmVhYyIsImlhdCI6MTcwODk4NTQ4OSwiZXhwIjoxNzA5MDcxODg5fQ.52KGT8nDWDianqkIt9bxYaDkKUAnOeAWwZ9rqI-DXqE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:30001/api/v1/user/get-user-info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30001",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"get-user-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Face check",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "imagecompare",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "show photo",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "user-email-verification",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getdata",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "photo upload",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
