@@ -12,3 +12,11 @@ Go to the <b>python_flask_code</b>
 Let's start the second python script. It is a flask server so you need to install <code>pip install flask</code>, <code>pip install dlib</code>, <code>pip install face-recognition</code>. Once install done. Now run the server using this cmd line: <code>python3 -u contest.py</code>
 
 Once run all perfectly. You can import postman api json on postman then test api.
+
+So that let's do the next part.
+<b>Download the Android app</b> using this link <link> https://github.com/rmtomal00/Attandence_app.git</link>
+
+Now open it in Android studio.
+Here, will get file call <b>local.properties</b>> Change the ip here also. Rebuild the app from <code> Build -> Rebuild. 
+
+Let's run the app and enjoy everything using face varification.
