@@ -5,7 +5,7 @@ const { createUser, findByEmail, findById, UpdateUserById, createOrUpdateField, 
 const {userDataModel, userPassword} = require("./userModel")
 const emailRequireCheck = require("./resetPassMiddleware");
 const {jwtGenerate, jwtVerify} = require('./jwtToken')
-const {serverUrl, jwtSecret} = require('./config')
+const {serverUrl, jwtSecret, path} = require('./config')
 const {emailSender}  = require("./mailSender");
 const { customEmail } = require('./forgetPasswordEmail');
 const tokenVerify = require('./tokenVerifyBody');
@@ -28,7 +28,7 @@ router.all('/signup' , d, async function(req, res){
             const data = await userDataModel(username, email, password, phoneNumber, dateOfbirth);
             const userCreate = await createUser(data)
             if(!userCreate.err){
-                await insertData({id: userCreate.id, userName: username, userMail: email, userPhone: phoneNumber, birthDate: dateOfbirth, photo: "http://"+serverUrl+"/api/v1/file/photos/"+photo, status: true, photoPath: "/home/rmtomal/nodejs_projects/varsity_showcase/uploads/"+photo, getAttandence: true})  //change this location use where image are storeing "/home/rmtomal/nodejs_projects/varsity_showcase/uploads/"" 
+                await insertData({id: userCreate.id, userName: username, userMail: email, userPhone: phoneNumber, birthDate: dateOfbirth, photo: "http://"+serverUrl+"/api/v1/file/photos/"+photo, status: true, photoPath: path+photo, getAttandence: true})  //change this location use where image are storeing "/home/rmtomal/nodejs_projects/varsity_showcase/uploads/"" 
                 res.status(201).json(apiResponse(userCreate.message, false, 201))
                 return
             }
