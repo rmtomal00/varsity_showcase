@@ -5,6 +5,7 @@ Then go to <b>config.js file change mongodb url, change the db name and JWT toke
 
 Now change the mailSender.js file
 
-If you had done everything successfully. Now run command <code>npm i</code>
+If you had done everything successfully. Now run command <code>npm i</code> <br>
 Then start the server using. <code>node app.js</code>
 
+Let's start the second python script. It is a flask server so you need to install <code>pip install flask</code>, <code>pip install dlib</code>, <code>pip install </code>, 
