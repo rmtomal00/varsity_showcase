@@ -4,3 +4,7 @@ Download this project to you IDE. It's base on nodejs express so that you need t
 Then go to <b>config.js file change mongodb url, change the db name and JWT token Secret also change the server IP, change the path (For windows like C:User/rmtomal/varsity_showcase/upload/)</b>. You will get your ip address using cmd <code>ifconfig</code> 
 
 Now change the mailSender.js file
+
+If you had done everything successfully. Now run command <code>npm i</code>
+Then start the server using. <code>node app.js</code>
+
