@@ -16,7 +16,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\": \"tomal\",\n    \"email\":\"orbaic.tomal@gmail.com\",\n    \"password\": \"12345678\",\n    \"dateOfbirth\": \"2001-12-12\",\n    \"phoneNumber\": \"01738619197\"\n\n}",
+					"raw": "{\n    \"username\": \"tomal\",\n    \"email\":\"rmtomal10@gmail.com\",\n    \"password\": \"12345678\",\n    \"phoneNumber\": \"01738619197\",\n    \"photo\": \"file-1708873288216-435285084-tomal2.jpg\"\n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -24,7 +24,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:30001/api/v1/signup",
+					"raw": "http://localhost:30001/api/v1/auth/signup",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -33,6 +33,7 @@
 					"path": [
 						"api",
 						"v1",
+						"auth",
 						"signup"
 					]
 				}
@@ -45,7 +46,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:30001/verifyemail?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2tub3dsZWRnZWQiOnRydWUsImluc2VydGVkSWQiOiI2NWNiYjBmOTcyZDk2NGI1MDEyNDUzZTY0IiwiaWF0IjoxNzA3ODQ3OTI5LCJleHAiOjE3MDc5MzQzMjl9.w3u9BZZkRcEqRvaTxZ2ycrVt6grtREII7lDCzWO1p8o",
+					"raw": "http://localhost:30001/verifyemail?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2tub3dsZWRnZWQiOnRydWUsImluc2VydGVkSWQiOiI2NWNiYjBmOTcyZDkyYjUwMTI0NTNlNjQiLCJpYXQiOjE3MDc4NDc5MjksImV4cCI6MTcwNzkzNDMyOX0.59COdFKSPF8IVyfkFKhW634QBrLu43tVMVSoCLyAm1E",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -57,7 +58,7 @@
 					"query": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2tub3dsZWRnZWQiOnRydWUsImluc2VydGVkSWQiOiI2NWNiYjBmOTcyZDk2NGI1MDEyNDUzZTY0IiwiaWF0IjoxNzA3ODQ3OTI5LCJleHAiOjE3MDc5MzQzMjl9.w3u9BZZkRcEqRvaTxZ2ycrVt6grtREII7lDCzWO1p8o"
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2tub3dsZWRnZWQiOnRydWUsImluc2VydGVkSWQiOiI2NWNiYjBmOTcyZDkyYjUwMTI0NTNlNjQiLCJpYXQiOjE3MDc4NDc5MjksImV4cCI6MTcwNzkzNDMyOX0.59COdFKSPF8IVyfkFKhW634QBrLu43tVMVSoCLyAm1E"
 						}
 					]
 				}
@@ -66,9 +67,42 @@
 		},
 		{
 			"name": "reset-password",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"rmtomal10@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:30001/api/v1/auth/reset-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30001",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"reset-password"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "wertyu",
+							"disabled": true
+						}
+					]
+				}
 			},
 			"response": []
 		},
@@ -82,7 +116,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"rmtomal11@gmail.com\",\n    \"password\": 123456\n\n}",
+					"raw": "{\n    \"email\": \"rmtomal11@gmail.com\",\n    \"password\": \"123456\"\n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -90,7 +124,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:30001/api/v1/login",
+					"raw": "http://localhost:30001/api/v1/auth/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -99,6 +133,7 @@
 					"path": [
 						"api",
 						"v1",
+						"auth",
 						"login"
 					]
 				}
@@ -107,9 +142,35 @@
 		},
 		{
 			"name": "logout",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im9yYmFpYy50b21hbEBnbWFpbC5jb20iLCJpZCI6IjY1ZDEyOTJjMWVkZTk0YTVjMDE5YTFhMyIsImlhdCI6MTcwODIwNjYxMCwiZXhwIjoxNzA4MjkzMDEwfQ.MoKlDdjA6M8pXHPnDRQqm7LuClL6lR2-H_yC0Gk8nJE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:30001/api/v1/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30001",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"logout"
+					]
+				}
 			},
 			"response": []
 		},
@@ -147,16 +208,78 @@
 		{
 			"name": "Face check",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/rmtomal/nodejs_projects/varsity_showcase/uploads/file-1709082127982-11803076-image.jpg"
+						},
+						{
+							"key": "pat",
+							"value": "/home/rmtomal/nodejs_projects/varsity_showcase/uploads/file-1709113920954-961613742-image.jpg",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "rmtomal10@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Tomal",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:30001/api/v1/file/facecheck",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30001",
+					"path": [
+						"api",
+						"v1",
+						"file",
+						"facecheck"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "imagecompare",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"image_url1\": \"/home/rmtomal/nodejs_projects/varsity_showcase/uploads/tomal2.jpg\",\n    \"image_url2\": \"/home/rmtomal/nodejs_projects/varsity_showcase/uploads/tomal2.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/compare_images",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"compare_images"
+					]
+				}
 			},
 			"response": []
 		},
@@ -164,15 +287,56 @@
 			"name": "show photo",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:30001/api/v1/file/photos/file-1708624214992-67731409-tomal2.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30001",
+					"path": [
+						"api",
+						"v1",
+						"file",
+						"photos",
+						"file-1708624214992-67731409-tomal2.jpg"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "user-email-verification",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"rmtomal10@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:30001/api/v1/auth/resend-verification-mail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30001",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"resend-verification-mail"
+					]
+				}
 			},
 			"response": []
 		},
@@ -187,8 +351,47 @@
 		{
 			"name": "photo upload",
 			"request": {
-				"method": "GET",
-				"header": []
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJtdG9tYWwxMUBnbWFpbC5jb20iLCJpZCI6IjY1ZGU4NjEwMTkyYzM5MjBiYmQ2MmUzNCIsImlhdCI6MTcwOTI0OTExNiwiZXhwIjoxNzA5MzM1NTE2fQ.vFzadCDAKYPJSaQmg4qOqSpFYINTFNh6gbgeTFzp7e4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/rmtomal/Downloads/Face-Recognition-Nodejs-MongoDB-master.zip"
+						},
+						{
+							"key": "token",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:30001/api/v1/file/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30001",
+					"path": [
+						"api",
+						"v1",
+						"file",
+						"upload"
+					]
+				}
 			},
 			"response": []
 		}
