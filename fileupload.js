@@ -32,7 +32,7 @@ fileUpload.post('/upload', upload.single("file"), (req, res) => {
   console.log(req.headers);
   res.json(req.file)
 })
-fileUpload.use("/photos" ,e.static('uploads'))
+fileUpload.use("/photos/uploads" ,e.static('uploads'))
 
 const storage1 = multer.diskStorage({
   destination: function (req, file, cb) {
